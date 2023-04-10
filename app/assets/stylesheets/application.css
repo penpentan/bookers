@@ -13,31 +13,35 @@
  *= require_tree .
  *= require_self
  */
-*{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
+/**{*/
+/*  margin:0;*/
+/*  padding:0;*/
+/*  box-sizing: border-box;*/
+/*}*/
 
-.b {
-    font-weight: bold;
-}
-
-p, ol, ul, td {
+p, ol, ul, td , .flash{
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 18px;
     margin: 33px;
 }
 
-h1 {
-    display: block;
-    font-size: 2em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+td {
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input[type="text"] {
+    padding: 1px 2px;
+}
+
+textarea {
+    padding: 2px 2px;
+}
+
+input[type="submit"] {
+    padding: 1px 6px;
 }
 
 body {
@@ -48,3 +52,63 @@ body {
     line-height: 18px;
     margin: 33px;
 }
+
+.b {
+    font-weight: bold;
+}
+
+.redirect{
+    display: flex;
+    padding-top: 10px;
+}
+
+.flash{
+    color: green;
+}
+
+.redirect-show{
+    display: flex;
+}
+
+.box{
+    margin-bottom: 10px
+}
+
+.title-text{
+    display: block;
+}
+
+.error-message{
+    font-size: 12px;
+}
+
+.action{
+    margin-bottom: 10px;
+}
+
+.error-box{
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.error-top {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0;
+    background-color: #c00;
+    color: #fff;
+}
+
+.error-title{
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+

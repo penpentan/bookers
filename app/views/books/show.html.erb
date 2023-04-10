@@ -1,2 +1,64 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="flash">
+  <%= flash[:notice] %>
+</div>
+
+<% if @book.errors.any? %>
+  <h1>Editing Book</h1>
+  <div class=error-box>
+    <h2 class="error-top"><%= @book.errors.count %> errors prohibited this book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li class="error-message"><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <%= form_with model: Book.new do |f| %>
+    <div class="box">
+      <div class="error-title">
+        <label class="title-text">Title</label>
+      </div>
+      <div class="error-title">
+        <%= f.text_field :title %>
+      </div>
+    </div>
+    <div class="box">
+      <div class="error-title">
+        <label class="title-text">Body</label>
+      </div>
+       <div class="error-title">
+        <%= f.text_area :body %>
+      </div>
+    </div>
+    <div class="action">
+      <%= f.submit "Update Book" %>
+    </div>
+
+
+    <div class="redirect-show">
+      <span>
+      <%= link_to "Show","#{@book.id}/edit" %>
+      </span>
+      &nbsp|&nbsp
+      <span>
+        <%= link_to "Back","../books" %>
+      </span>
+    </div>
+
+  <% end %>
+<% else %>
+
+<p><span class="b">Title: </span><%= @book.title %></p>
+<p><span class="b">Body: </span><%= @book.body %></p>
+
+<div class="redirect-show">
+  <span>
+    <%= link_to "Edit","#{@book.id}/edit" %>
+  </span>
+  &nbsp|&nbsp
+  <span>
+    <%= link_to "Back","../books" %>
+  </span>
+</div>
+
+<% end %>
